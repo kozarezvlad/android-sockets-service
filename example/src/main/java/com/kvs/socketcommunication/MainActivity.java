@@ -8,7 +8,7 @@ import com.kvs.socketcommunicator.SocketServiceManager;
 
 public class MainActivity extends AppCompatActivity {
 
-    SocketServiceManager socketServiceManager;
+    public SocketServiceManager socketServiceManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,5 +35,9 @@ public class MainActivity extends AppCompatActivity {
     public void onStop() {
         super.onStop();
         socketServiceManager.unbindService(this);
+    }
+
+    public SocketServiceManager getSocketServiceManager() {
+        return socketServiceManager;
     }
 }
